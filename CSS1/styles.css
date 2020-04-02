@@ -1,0 +1,12 @@
+body {
+    font-family: muli;
+}
+.heading {
+    color: rgb(227, 75, 199);
+}
+#p2 {
+    opacity: 0.5;
+}
+span {
+    font-style: italic;
+}
