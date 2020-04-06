@@ -12,49 +12,55 @@
                 border-width: 5px;
                 border-color: grey;
                 padding: 20px;
-                min-width: 600px;
-                display: flex;
-                flex-wrap: wrap;
-
+                word-spacing: 0.4em;
+                letter-spacing: 0.1em;
             }
             .flex-container {
                 display: flex;
-                flex-wrap: wrap;
                 flex-direction: column;
-                align-items: center;
+                max-width: 600px;
+                align-items: stretch;
                 margin: auto;
-
             }
-
+            #logo {
+                margin: auto;
+            }
             ul {
                 border-top: solid 2px;
                 border-bottom: solid 1px;
-                width: 600px;
                 display: flex;
                 justify-content: space-evenly;
                 padding: 15px 0;
                 flex-wrap: wrap;
+
+
             }
-            ul li {
+            ul > li {
                 display: inline-flex;
                 flex-wrap: wrap;
                 text-transform: uppercase;
-
+                padding: 0 10px;
 
             }
             a {
                 color: red;
                 text-decoration: none;
             }
+            #main-image {
+                width: 100%;
+                height: 100%;
+            }
             p {
                 text-align: center;
-                width: 550px;
+                padding: 0 15px;
+
+
             }
         </style>
     </head>
     <body>
         <div class="flex-container">
-            <div>
+            <div id="logo">
                 <img src="https://raw.githubusercontent.com/zigmantasvcs/resources/master/page%20task/logo.gif">
             </div>
             <div>
@@ -67,7 +73,7 @@
                 </ul>
             </div>
             <div>
-                <img src="https://raw.githubusercontent.com/zigmantasvcs/resources/master/page%20task/keys.jpg">
+                <img src="https://raw.githubusercontent.com/zigmantasvcs/resources/master/page%20task/keys.jpg" id="main-image">
             </div>
             <div>
                 <p>Mes specializuojamės klasikinių klaviatūrų, ypač "Fender Rhodes", Wurlitzer EP200 ir Hohner Clavinet, pardavimu ir taisymu.

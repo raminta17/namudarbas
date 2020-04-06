@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="lt">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS3</title>
+        <style>
+            .fieldset {
+                border: none;
+            }
+            #fs1 {
+                background-color: lightgoldenrodyellow;
+            }
+            #fs2 {
+                background-color: rgb(171, 245, 206);
+
+            }
+            input {
+                border-radius: 3px;
+            }
+            /*label {
+                margin: 0 100px 0 0;
+            }
+            */
+
+
+            #submit {
+                padding: 5px 230px;
+            }
+            #content {
+                width: 750px
+            }
+            #fs2 {
+                margin-top: 5px;
+            }
+            ul li {
+                display: inline;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Registracija į renginį</h1>
+        <div id="content">
+            <main>
+                <form>
+                    <fieldset class="fieldset" id="fs1">
+                        <section>
+                            <h2>Registracijos forma</h2>
+                            <p>Jeigu norite užsiregistruoti į renginį, užpildykite žemiau esančią formą. Žemiau lentelėje galite matyti jau užsiregistravusius dalyvius.</p>
+                        </section>
+                        <div>
+                            <label for="userName">Vardas</label>
+                            <input type="text" name="userName" id="userName">
+                        </div>
+                        <div>
+                            <label for="userSurname">Pavardė</label>
+                            <input type="text" name="userSurname" id="userSurname">
+                        </div>
+                        <div>
+                            <label for="email">Elektronins paštas</label>
+                            <input type="email" name="email" id="email">
+                        </div>
+                        <div>
+                            <input type="submit" value="Registruoti" id="submit">
+                        </div>
+                    </fieldset>
+                </form>
+            </main>
+            <fieldset class="fieldset" id="fs2">
+                <h2>Jau užsiregistravę dalyviai:</h2>
+                <ul display:inline>
+                    <li class="li">Vardas</li>
+                    <li class="li">Pavarde</li>
+                    <li class="li">Eletroninis pastas</li>
+                </ul>
+            </fieldset>
+        </div>
+    </body>
+</html>
