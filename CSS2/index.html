@@ -5,75 +5,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CSS2</title>
         <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600&display=swap" rel="stylesheet">
-        <style>
-            body {
-                font-family: 'Zilla Slab', serif;
-                border-style: double;
-                border-width: 5px;
-                border-color: grey;
-                padding: 20px;
-                word-spacing: 0.4em;
-                letter-spacing: 0.1em;
-            }
-            .flex-container {
-                display: flex;
-                flex-direction: column;
-                max-width: 600px;
-                align-items: stretch;
-                margin: auto;
-            }
-            #logo {
-                margin: auto;
-            }
-            ul {
-                border-top: solid 2px;
-                border-bottom: solid 1px;
-                display: flex;
-                justify-content: space-evenly;
-                padding: 15px 0;
-                flex-wrap: wrap;
-            }
-            ul > li {
-                display: inline-flex;
-                flex-wrap: wrap;
-                text-transform: uppercase;
-                padding: 0 10px;
-            }
-            a {
-                color: red;
-                text-decoration: none;
-            }
-            #main-image {
-                width: 100%;
-                height: 100%;
-            }
-            p {
-                text-align: center;
-                padding: 0 15px;
-            }
-        </style>
+        <link href="css/styles.css" rel="stylesheet">
     </head>
     <body>
-        <div class="flex-container">
-            <div id="logo">
-                <img src="https://raw.githubusercontent.com/zigmantasvcs/resources/master/page%20task/logo.gif">
-            </div>
-            <div>
-                <ul>
-                <li><a href="pagrindinis.html">Pagrindinis</a></li>
-                <li>Pardavimas</li>
-                <li>Remontas</li>
-                <li>Apie</li>
-                <li>Kontaktai</li>
-                </ul>
-            </div>
-            <div>
+        <header class="content">
+            <img src="https://raw.githubusercontent.com/zigmantasvcs/resources/master/page%20task/logo.gif" id="logo">
+        </header>
+        <nav class="content">
+            <ul>
+                <li><a href="#">Pagrindinis</a></li>
+                <li><a href="#">Pardavimas</a></li>
+                <li><a href="#">Remontas</a></li>
+                <li><a href="#">Apie</a></li>
+                <li><a href="#">Kontaktai</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <figure>
                 <img src="https://raw.githubusercontent.com/zigmantasvcs/resources/master/page%20task/keys.jpg" id="main-image">
-            </div>
-            <div>
+            </figure>
+            <article>
                 <p>Mes specializuojamės klasikinių klaviatūrų, ypač "Fender Rhodes", Wurlitzer EP200 ir Hohner Clavinet, pardavimu ir taisymu.
                 </p>
-            </div>
-        </div>
+            </article>
+        </main>
     </body>
 </html>
