@@ -4,48 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CSS3</title>
-        <style>
-            body {
-                margin: 0;
-            }
-            h1 {
-              margin: 0 0 20px 0;
-            }
-            #content {
-                max-width: 750px;
-            }
-            .fieldset {
-                border: none;
-            }
-            #fs1 {
-                background-color: lightgoldenrodyellow;
-            }
-            section {
-                max-width: 550px;
-            }
-            .formos-punktas {
-                display: flex;
-                justify-content: space-between;
-                margin: 5px;
-            }
-            input {
-                border-radius: 3px;
-                padding: 5px 60px;
-            }
-            #submit {
-                text-align: center;
-            }
-            #fs2 {
-                background-color: rgb(171, 245, 206);
-
-            }
-            #fs2 {
-                margin-top: 500px 0 0 0;
-            }
-            ul li {
-                display: inline;
-            }
-        </style>
+        <link href="css/styles.css" rel="stylesheet">
     </head>
     <body>
         <h1>Registracija į renginį</h1>
@@ -57,18 +16,18 @@
                             <h2>Registracijos forma</h2>
                             <p>Jeigu norite užsiregistruoti į renginį, užpildykite žemiau esančią formą. Žemiau lentelėje galite matyti jau užsiregistravusius dalyvius.</p>
                         </article>
-                        <section>
+                        <section id="forma">
                             <div class="formos-punktas">
                                 <label for="userName" >Vardas</label>
-                                <input type="text" name="userName" id="userName" >
+                                <input type="text" name="userName" class="input-text" id="userName" >
                             </div>
                             <div class="formos-punktas">
                                 <label for="userSurname">Pavardė</label>
-                                <input type="text" name="userSurname" id="userSurname">
+                                <input type="text" name="userSurname" class="input-text" id="userSurname">
                             </div>
                             <div class="formos-punktas">
                                 <label for="email">Elektroninis paštas</label>
-                                <input type="email" name="email" id="email">
+                                <input type="email" name="email" class="input-text" id="email">
                             </div>
                             <div>
                                 <input type="submit" value="Registruoti" id="submit">
@@ -79,11 +38,23 @@
             </main>
             <fieldset class="fieldset" id="fs2">
                 <h2>Jau užsiregistravę dalyviai:</h2>
-                <ul display:inline>
-                    <li class="li">Vardas</li>
-                    <li class="li">Pavardė</li>
-                    <li class="li">Elektroninis paštas</li>
-                </ul>
+                <section id="dalyviu-lentele">
+                    <header class="rows">
+                        <div class="col1">Vardas</div>
+                        <div class="col2">Pavardė</div>
+                        <div class="col3">Elektroninis paštas</div>
+                    </header>
+                    <div class="rows dalyviai" >
+                        <div class="col1">Jonas</div>
+                        <div class="col2">Jonaitis</div>
+                        <div class="col3">jonaitis@gmail.com</div>
+                    </div>
+                    <div class="rows dalyviai">
+                        <div class="col1">Petras</div>
+                        <div class="col2">Petraitis</div>
+                        <div class="col3">petraitis@gmail.com</div>
+                    </div>
+                </section>
             </fieldset>
         </div>
     </body>

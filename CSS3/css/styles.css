@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-size: 13px;
+}
+h1 {
+  margin: 0 0 20px 0;
+}
+#content {
+    max-width: 625px;
+}
+.fieldset {
+    border: none;
+    margin: 5px;
+}
+#fs1 {
+    background-color: lightgoldenrodyellow;
+}
+#forma {
+    max-width: 450px;
+}
+.formos-punktas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+}
+input {
+    border-radius: 4px;
+}
+.input-text {
+    font-size: 20px;
+}
+#submit {
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+}
+#fs2 {
+    background-color: rgb(171, 245, 206);
+}
+.rows {
+    display: flex;
+    align-items: stretch;
+}
+.rows div {
+    width: 10px;
+    padding: 7px;
+}
+.col1 {
+    flex-grow: 7;
+}
+.col2 {
+    flex-grow: 1;
+    text-align: center;
+}
+.col3 {
+    flex-grow: 2;
+    text-align: center;
+}
+header {
+    border: solid 1px;
+    background-color: rgb(206, 179, 227);
+    font-weight: bold;
+    text-align: center;
+}
+.dalyviai > .col1 {
+    border: solid 2px;
+    border-top: none;
+}
+.dalyviai > .col2 {
+    border-right: solid 2px;
+    border-bottom: solid 2px;
+}
+.dalyviai > .col3 {
+    border-right: solid 2px;
+    border-bottom: solid 2px;
+}
+@media screen and (max-width: 576px) {
+    .formos-punktas {
+        display: flex;
+        flex-direction: column;
+    }
+}
