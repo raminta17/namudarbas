@@ -37,6 +37,7 @@ input {
 }
 #fs2 {
     background-color: rgb(171, 245, 206);
+    padding: 10px;
 }
 .rows {
     display: flex;
@@ -79,5 +80,14 @@ header {
     .formos-punktas {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
     }
+    .col3 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+   /* .col3 {
+        min-width: 110px;
+    } */
 }
