@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(233, 242, 247);
+}
+.section {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    margin: 0.2rem;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 1px 1px lightgrey;
+}
+.section:hover {
+     box-shadow: 3px 3px lightgrey;
+}
+img {
+    object-fit: cover;
+}
+a {
+    text-decoration: none;
+    color: darkblue;
+    margin: 1rem 0;
+}
+a:hover {
+    text-decoration: underline;
+}
+.detales {
+    font-size: 0.8rem;
+    margin: 0;
+}
+.atmintine {
+    white-space: nowrap;
+    width: 8.7rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.istrizaine {
+    white-space: nowrap;
+    width: 8.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+h4 {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+}
+.sena-kaina {
+    margin: 0;
+    font-size: 0.8rem;
+    text-decoration: line-through;
+}
+button {
+    background-color: cornflowerblue;
+    width: 60%;
+    padding: 0.6rem;
+    color: white;
+}
+.priedas {
+    color:cornflowerblue;
+    font-size: 0.7rem;
+    margin: 0.5rem 0;
+}
