@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="lt">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS4</title>
+    </head>
+    <body>
+        <button onclick="saveFirstNumber('dalini', 6865)">Iveskite dalini</button>
+        <p id="demo1"></p>
+        <button onclick="saveSecondNumber('pimpala', 2675)">Iveskite dalikli</button>
+        <p id="demo2"></p>
+        <button onclick="answer()">Dalmuo</button>
+        <p id="demo3"></p>
+        <script>
+            var firstNumber  = 0;
+            var secondNumber = 0;
+
+            function saveNumber(inputText, inputNumber) {
+                var inputValue = prompt("iveskite " + inputText, inputNumber);
+                if (isValidNumber(inputValue)) {
+                    inputValue = Number(inputValue);
+                } else {
+                    var i = 0;
+                    while (!isValidNumber(inputValue) && i < 3) {
+                        inputValue = prompt("iveskite skaiciu, pvz.:76");
+                        i++;
+                    }
+                }
+                return inputValue;
+            }
+
+            function isValidNumber(numberToCheck) {
+                return !isNaN(numberToCheck) && numberToCheck != "";
+            }
+
+            function saveFirstNumber(inputText, inputNumber) {
+                firstNumber = saveNumber(inputText, inputNumber);
+            }
+
+            function saveSecondNumber(inputText, inputNumber) {
+                secondNumber = saveNumber(inputText, inputNumber);
+            }
+
+            function answerOfTwoNumbersDivision() {
+                var twoNumbersDivision = firstNumber / secondNumber;
+                if (isValidNumber(twoNumbersDivision)){
+                    return twoNumbersDivision;
+                } else {
+                    var answerIfInputInvalid = "atsakymas negalimas, nebuvo ivestas skaicius";
+                    return answerIfInputInvalid;
+                }
+            }
+
+            function answer() {
+                var finalAnswer = answerOfTwoNumbersDivision();
+                alert(finalAnswer);
+                console.log(finalAnswer);
+            }
+        </script>
+    </body>
+</html>

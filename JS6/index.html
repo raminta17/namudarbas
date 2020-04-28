@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS6</title>
+    </head>
+    <body>
+        <button onclick="ageCheck()">Click here</button>
+        <p id="demo"></p>
+        <script>
+            function ageCheck() {
+              var userAge =  prompt("What is your age?", "");
+                if (userAge >= 18 && userAge !="") {
+                    document.getElementById("demo").innerHTML = "You are welcome to see the content of this page.";
+                } else if  (userAge < 18 && userAge !=""){
+                    document.getElementById("demo").innerHTML = "You have to be at least 18 years old to see the content of this page.";
+                } else {
+                    document.getElementById("demo").innerHTML = "To write Your age please use numbers. Do not use letters or symbols e.g. ?!;/ .";
+                }
+            }
+        </script>
+    </body>
+</html>
