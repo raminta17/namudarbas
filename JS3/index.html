@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="lt">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Internetinė parduotuvė">
+        <meta name="keywords" content="prekės internetu, nešiojamas kompiuteris, internetinė parduotuvė, kompiuteriai internetu">
+        <title>JS3 namu darbai</title>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+        <style>
+            article {
+                font-family: 'Baloo 2', cursive;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            section {
+                margin: 10px;
+                border: 1px solid;
+                border-radius: 4px;
+                width: 250px;
+                display: flex;
+                flex-direction: column;
+            }
+            .row {
+                display: flex;
+                border-bottom: solid #ddd 1px;
+            }
+            .row:hover {
+                background-color: #f5f5f5;
+            }
+            .column {
+                width: 100%;
+                padding: 5px;
+            }
+            .description-row {
+                flex-grow: 1;
+            }
+            .product-description {
+                text-align: justify;
+            }
+            select {
+                padding: 5px 10px;
+                border: none;
+                border-radius: 4px;
+                background-color: #f1f1f1;
+            }
+            select:hover {
+                background-color: white;
+            }
+            .first {
+                width: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            var preke1 = {
+                title: "Nešiojamas kompiuteris",
+                description: "NVIDIA GeForce GTX 1070 grafinis adapteris su Max-Q4 technologija, Intel Core 8th Generation procesorius ir pažangi aušinimo sistema suteikia reikiamą galią, nesvarbu, kur būtumėte.",
+                discount: 30,
+                isItNew: true,
+                color: 0,
+                price: 699.00,
+                currency: "EUR"
+            };
+            var prekes = [preke1];
+            var color = ["juoda", "raudona", "žalia","sidabrinė"];
+
+            document.write("<article>");
+                for (var prekesIndex=0; prekesIndex < prekes.length; prekesIndex++) {
+
+                    var preke = prekes[prekesIndex];
+                    var productInfoId = "product-info" + prekesIndex;
+                    var productTitleId = "product-title" + prekesIndex;
+                    var originalPriceId = "original-price" + prekesIndex;
+                    var priceWithDiscountId = "price-with-discount" + prekesIndex;
+                    var newPrice = preke["price"] - (preke["price"] * preke["discount"] / 100);
+                    var curencySymbol = preke["currency"].replace(/EUR/g, "€");
+
+                    document.write("<section id='" + productInfoId + "'>");
+
+                        document.write("<div class=\"row\">");
+                            document.write("<div class=\"column\" id=" + productTitleId + ">" + preke.title + "</div>");
+                        document.write("</div>");
+
+                        document.write("<div class=\"row description-row\">");
+                            document.write("<div class=\"column product-description\">" + preke.description + "</div>");
+                        document.write("</div>");
+
+                        document.write("<div class=\"row\">");
+                            document.write("<div class=\"column first\">Spalva:</div>");
+                            document.write("<div class=\"column second\"><select>");
+                                for (var spalvosIndex = 0; spalvosIndex < color.length; spalvosIndex++) {
+                                    document.write("<option>" + color[spalvosIndex] + "</option>");
+                                };
+                             document.write("</select></div>");
+
+                        document.write("</div>");
+
+                        document.write("<div class=\"row\">");
+                            document.write("<div class=\"column first\">Kaina:</div>");
+                            document.write("<div class=\"column second\"><span id='" + originalPriceId + "'>" + preke.price + " " + curencySymbol + "</span><span id='" + priceWithDiscountId + "'>" + " " + newPrice + " " + curencySymbol + " (-" + preke.discount + "%)</span></div>");
+                        document.write("</div>");
+
+                    document.write("</section>");
+
+                    document.getElementById(originalPriceId).style.textDecoration = "line-through";
+                    document.getElementById(priceWithDiscountId).style.color = "red";
+                    document.getElementById(priceWithDiscountId).style.fontWeight = "bold";
+                    document.getElementById(priceWithDiscountId).style.fontSize = "20 rem" ;
+
+                    if (preke["isItNew"] === true) {
+                        document.getElementById(productInfoId).style.color = "green";
+                        document.getElementById(productTitleId).style.color = "black";
+                        document.getElementById(productTitleId).style.backgroundColor = "green";
+                    } else {
+                        document.getElementById(productInfoId).style.color = "black";
+                        document.getElementById(productTitleId).style.backgroundColor = "#f5f5f5";
+                    };
+                };
+            document.write("</article>");
+        </script>
+    </body>
+</html>
