@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS8 namu darbas1</title>
+        <style>
+            table, th, td{
+                border: solid 1px;
+                border-collapse: collapse;
+                width: 50%;
+                padding: 3px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Viešbučiai (su laisvais kambariais)</h1>
+        <article id="available-hotels-list"></article>
+        <script>
+            var viesbuciai = [
+                {
+                "name": "Radisson",
+                "Address": "Konstitucijos pr. 29",
+                "Rooms":[
+                {"Number":210, "GuestCount":2, "Price":100},
+                {"Number":211, "GuestCount":2, "Price":110},
+                {"Number":212, "GuestCount":2, "Price":109}
+                ]
+                },
+                {
+                "name": "Vilnius Inn",
+                "Address": "Šiaulių g. 3",
+                "Rooms":[
+                {"Number":11, "GuestCount":2, "Price":100},
+                {"Number":15, "GuestCount":1, "Price":58},
+                {"Number":22, "GuestCount":2, "Price":80},
+                {"Number":23, "GuestCount":2, "Price":99}
+                ]
+                }
+             ];
+
+            function generateHotels() {
+                for (var hotelIndex in viesbuciai) {
+                    var articleHotelsList = document.getElementById("available-hotels-list");
+                    var htmlText = "";
+
+                    htmlText += "<section>";
+                    htmlText += "<h2>" + viesbuciai[hotelIndex].name + "</h2>";
+                    htmlText += "<h3>" + viesbuciai[hotelIndex].Address + "</h3>";
+                    htmlText += "<table>";
+                    htmlText += "<tr><th>Kambario numeris</th><th>Žmonių skaičius</th><th>Kaina</th></tr>";
+
+                        for (var roomsIndex in viesbuciai[hotelIndex].Rooms) {
+                            htmlText += "<tr><td>" + viesbuciai[hotelIndex].Rooms[roomsIndex].Number + "</td>";
+                            htmlText += "<td>" + viesbuciai[hotelIndex].Rooms[roomsIndex].GuestCount + "</td>";
+                            htmlText += "<td>" + viesbuciai[hotelIndex].Rooms[roomsIndex].Price + "</td></tr>";
+                        };
+
+                    htmlText += "</table>";
+                    htmlText += "</section>";
+                    articleHotelsList.innerHTML += htmlText;
+                };
+            };
+
+            generateHotels();
+
+        </script>
+    </body>
+</html>
