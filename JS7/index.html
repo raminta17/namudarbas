@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="8 different ways to remove elements from an array">
+        <meta name="keywords" content="remove element, array">
+        <title>JS7 namu darbas</title>
+        <style>
+            button {
+                display: flex;
+                padding: 5px;
+                margin: 15px;
+                width: 150px;
+            }
+            #reset {
+                background-color: green;
+                font-weight: bold;
+                padding: auto 0;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="reset()" id="reset">Reset name list</button>
+        <button onclick="newNameListUsingIndexOfandSplice(listOfNames, 'Jack')">1. IndexOf and splice</button>
+        <button onclick="newNameListUsingLastIndexOfandSplice(listOfNames, 'Jack')">2. LastIndexOf and fill</button>
+        <button onclick="newNameListUsingStringAndReplace(listOfNames, 'Jack')">3. String and replace</button>
+        <button onclick="newNameListUsingStringAndSlice(listOfNames, 'Jack')">4. String and slice</button>
+        <button onclick="newNameListUsingStringAndSplit(listOfNames, 'Jack')">5. String and split</button>
+        <button onclick="newNameListUsingFor(listOfNames, 'Jack')">6. For</button>
+        <button onclick="newNameListUsingFilter(listOfNames, 'Jack')">7. Filter</button>
+        <button onclick="newNameListUsingDelete(listOfNames, 'Jack')">8. Delete</button>
+        <script>
+            var listOfNames = ["John", "Peter", "Michael", "Jack", "Emily", "Laura"];
+
+
+            function reset(){
+                console.log(listOfNames = ["John", "Peter", "Michael", "Jack", "Emily", "Laura"]);
+            }
+
+            //pirmas budas
+            function newNameListUsingIndexOfandSplice(listOfNames, name) {
+                var selectedNamePositionInTheList = listOfNames.indexOf(name);
+                listOfNames.splice(selectedNamePositionInTheList, 1);
+                console.log(listOfNames);
+            }
+
+            // antras budas
+            function newNameListUsingLastIndexOfandSplice(listOfNames, name) {
+                var selectedNamePositionInTheList = listOfNames.lastIndexOf(name);
+                listOfNames.splice(selectedNamePositionInTheList, 1);
+                console.log(listOfNames);
+            }
+
+            // trecias budas
+            function newNameListUsingStringAndReplace(listOfNames, name) {
+                var arrayToString = listOfNames.toString();
+                listOfNames = arrayToString.replace(name,"");
+                listOfNames = listOfNames.replace(/,/g," ");
+                console.log(listOfNames);
+            }
+            //ketvirtas budas
+            function newNameListUsingStringAndSlice(listOfNames, name) {
+                var arrayToString = listOfNames.toString();
+                var selectedNamePositionInTheList = arrayToString.indexOf(name);
+                var nameSymbols = name.length;
+                var listOfNames1 = arrayToString.slice(0, selectedNamePositionInTheList);
+                var listOfNames2 = arrayToString.slice(selectedNamePositionInTheList+nameSymbols);
+                listOfNames = listOfNames1 + listOfNames2;
+                listOfNames = listOfNames.replace(/,/g," ");
+                console.log(listOfNames);
+            }
+
+            //penktas budas
+            function newNameListUsingStringAndSplit(listOfNames, name) {
+                var arrayToString = listOfNames.toString();
+                listOfNames = arrayToString.split(name);
+                console.log(listOfNames);
+            }
+
+            // sestas budas
+            function newNameListUsingFor(listOfNames, name) {
+
+                for (var i=0; i < listOfNames.length; i++) {
+                    if (listOfNames[i] === name){
+                        listOfNames.splice(i, 1);
+                    };
+                };
+                console.log(listOfNames);
+            }
+
+            // septintas budas
+            var nameToFilter = "";
+
+            function nameCheck(name){
+                return name !== nameToFilter;
+            }
+            function newNameListUsingFilter(listOfNames, nameToRemove){
+                nameToFilter = nameToRemove;
+                console.log(listOfNames.filter(nameCheck));
+            }
+
+           //astuntas budas
+            function newNameListUsingDelete(listOfNames, name){
+                var namePosition = listOfNames.indexOf(name);
+                delete listOfNames[namePosition];
+                console.log(listOfNames);
+            }
+
+        </script>
+    </body>
+</html>
