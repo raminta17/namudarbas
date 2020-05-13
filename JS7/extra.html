@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS7 extra</title>
+    </head>
+    <body>
+        <button onclick="newNameList(listOfNames, 'Jack')">Press here</button>
+        <script>
+             var listOfNames = ["John", "Peter", "Michael", "Jack", "Emily", "Laura"];
+
+            function newNameList(listOfNames, name) {
+
+                for (var i=0; i < listOfNames.length; i++) {
+                    if (listOfNames[i] === name){
+                        listOfNames.splice(i, 1);
+                    };
+                };
+                listOfNames = listOfNames.toString();
+                console.log(listOfNames);
+            }
+
+        </script>
+    </body>
+</html>
